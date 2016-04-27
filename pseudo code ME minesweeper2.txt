@@ -1,0 +1,30 @@
+on signal click button [x][y]
+
+if array[x][y] = 9
+	game over
+else if array[x][y] >0
+	if x >= 0
+		go up
+	if x < M
+		go down
+	if y < N
+		go right
+	if y >= 0
+		go left
+	modify button state2
+else
+	modify button state2
+
+go up
+	signal click button [x-1][y]
+go down
+	signal click button [x+1][y]
+go right
+	signal click button [x][y+1]
+go left
+	signal click button [x][y-1]
+
+on signal right click button [x][y]
+	modify button state1
+
+create a class with a button member then add that button member to a grid?
